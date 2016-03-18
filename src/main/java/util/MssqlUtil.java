@@ -21,14 +21,13 @@ import java.util.Properties;
  */
 public class MssqlUtil {
 
-	
 	/**
 	 * 查询返回String二维数组
 	 * @param sql
 	 * @param args
 	 * @return
 	 */
-	public static String[][] queryForArray(String sql, Object[] args) {
+	public static String[][] queryForArray(String sql, Object... args) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -84,7 +83,7 @@ public class MssqlUtil {
 	 * @return 多条记录的List集合
 	 */
 	public static List<Map<String, Object>> queryForList(String sql,
-			Object[] args) {
+			Object... args) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
@@ -134,7 +133,7 @@ public class MssqlUtil {
 	 * @param args
 	 * @return 一条记录的Map
 	 */
-	public static Map<String, Object> queryForMap(String sql, Object[] args) {
+	public static Map<String, Object> queryForMap(String sql, Object... args) {
 		List<Map<String, Object>> result = queryForList(sql, args);
 		Map<String, Object> row = null;
 		if (result.size() == 1) {
@@ -151,7 +150,7 @@ public class MssqlUtil {
 	 * @param args
 	 * @return 是否执行成功
 	 */
-	public static boolean execute(String sql, Object[] args) {
+	public static boolean execute(String sql, Object... args) {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		boolean result = true;

@@ -1,7 +1,5 @@
 package test;
 
-import java.util.UUID;
-
 import util.OracleUtil;
 
 public class TestOracle {
@@ -15,15 +13,15 @@ public class TestOracle {
 		String sql5 = "update db_user set password=? where username=?";
 		String sql6 = "delete from db_user where username=?";
 		
-		System.out.println(OracleUtil.queryForList(sql1, null));
-		System.out.println(OracleUtil.queryForMap(sql2, new Object[]{"1"}));;
-		System.out.println(OracleUtil.queryForMap(sql3, new Object[]{"1", "1"}));;
-		System.out.println(OracleUtil.execute(sql4, new Object[]{UUID.randomUUID().toString(), "2", "2"}));;
-		System.out.println(OracleUtil.queryForList(sql1, null));
-		System.out.println(OracleUtil.execute(sql5, new Object[]{"3", "2"}));;
-		System.out.println(OracleUtil.queryForList(sql1, null));
-		System.out.println(OracleUtil.execute(sql6, new Object[]{"2"}));;
-		System.out.println(OracleUtil.queryForList(sql1, null));
+		System.out.println(OracleUtil.queryForList(sql1));
+		System.out.println(OracleUtil.queryForMap(sql2, "1"));;
+		System.out.println(OracleUtil.queryForMap(sql3, "1", "1"));;
+		System.out.println(OracleUtil.execute(sql4, "2", "2"));;
+		System.out.println(OracleUtil.queryForList(sql1));
+		System.out.println(OracleUtil.execute(sql5, "3", "2"));;
+		System.out.println(OracleUtil.queryForList(sql1));
+		System.out.println(OracleUtil.execute(sql6, "2"));;
+		System.out.println(OracleUtil.queryForList(sql1));
 
 	}
 
